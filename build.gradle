@@ -11,6 +11,10 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'org.postgresql:postgresql'
+
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
@@ -26,7 +30,8 @@ bootRun.environment([
         "MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE": "*",
         "MANAGEMENT_ENDPOINT_HEALTH_SHOW-DETAILS": "always",
         "MANAGEMENT_HEALTH_PROBES_ENABLED": true,
-        "MANAGEMENT_ENDPOINT_HEALTH_GROUP_READINESS_INCLUDE": "backingService"
+        "MANAGEMENT_ENDPOINT_HEALTH_GROUP_READINESS_INCLUDE": "backingService",
+        "SPRING_DATASOURCE_URL": "jdbc:postgresql://localhost:5632/tracker_dev?user=tracker&password=password"
 ])
 
 test.environment([
@@ -34,6 +39,7 @@ test.environment([
         "MANAGEMENT_ENDPOINT_HEALTH_SHOW-DETAILS": "always",
         "MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE": "*",
         "MANAGEMENT_HEALTH_PROBES_ENABLED": true,
-        "MANAGEMENT_ENDPOINT_HEALTH_GROUP_READINESS_INCLUDE": "backingService"
+        "MANAGEMENT_ENDPOINT_HEALTH_GROUP_READINESS_INCLUDE": "backingService",
+        "SPRING_DATASOURCE_URL": "jdbc:postgresql://localhost:5632/tracker_test?user=tracker&password=password"
 
 ])

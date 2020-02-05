@@ -50,11 +50,11 @@ public class JdbcTimeEntryRepositoryTest {
 
     @Test
     public void createReturnsTheCreatedTimeEntry() {
-        TimeEntry newTimeEntry = new TimeEntry(123, 321, LocalDate.parse("2017-01-09"), 8);
+        TimeEntry newTimeEntry = new TimeEntry(1234, 321, LocalDate.parse("2017-01-09"), 8);
         TimeEntry entry = subject.create(newTimeEntry);
 
         assertThat(entry.getId()).isNotNull();
-        assertThat(entry.getProjectId()).isEqualTo(123);
+        assertThat(entry.getProjectId()).isEqualTo(1234);
         assertThat(entry.getUserId()).isEqualTo(321);
         assertThat(entry.getDate()).isEqualTo(LocalDate.parse("2017-01-09"));
         assertThat(entry.getHours()).isEqualTo(8);
