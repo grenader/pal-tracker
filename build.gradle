@@ -31,6 +31,7 @@ bootRun.environment([
 
 test.environment([
         "WELCOME_MESSAGE": "Hello from test",
+        "MANAGEMENT_ENDPOINT_HEALTH_SHOW-DETAILS": "always",
         "MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE": "*",
         "MANAGEMENT_HEALTH_PROBES_ENABLED": true,
         "MANAGEMENT_ENDPOINT_HEALTH_GROUP_READINESS_INCLUDE": "backingService"

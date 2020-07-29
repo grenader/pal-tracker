@@ -20,6 +20,6 @@ public class WebLayerTest {
     @Test
     public void shouldReturnDefaultMessage() throws Exception {
         this.mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk())
-                .andExpect(content().string(containsString("hello")));
+                .andExpect(content().string(containsString("Hello from test")));
     }
 }
