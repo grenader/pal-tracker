@@ -19,6 +19,9 @@ spec:
       containers:
         - name: pal-tracker-container
           image: grenader/pal-tracker:v3
+          resources:
+            limits:
+              cpu: "100m"
           readinessProbe:
             httpGet:
               path: /actuator/health/readiness
