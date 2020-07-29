@@ -20,7 +20,7 @@ jobs:
           java-version: 11
       - name: Build with Gradle
         run: ./gradlew build
-      - run: sudo apt-get install docker
+      - run: sudo curl -sSL https://get.docker.com/ | sh
       - run: docker login -u "${{env.DOCKER_HUB_USERNAME}}" -p "${{secrets.DOCKER_HUB_PASSWORD}}"
       - run: curl -LO https://github.com/buildpacks/pack/releases/download/v0.10.0/pack-v0.10.0-linux.tgz
       - run: tar xvf pack-v0.10.0-linux.tgz
