@@ -18,7 +18,10 @@ spec:
     spec:
       containers:
         - name: pal-tracker-container
-          image: grenader/pal-tracker:v3
+          image: grenader/pal-tracker:build-15
+          envFrom:
+            - secretRef:
+                name: db-credentials
           resources:
             limits:
               cpu: "100m"

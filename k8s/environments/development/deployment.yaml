@@ -7,10 +7,10 @@ spec:
     spec:
       containers:
         - name: pal-tracker-container
-          image: grenader/pal-tracker:build-github.run_number
+          image: grenader/pal-tracker:build-15
           env:
           - name: SPRING_DATASOURCE_HIKARI_MAXIMUMPOOLSIZE
             value: "1"
 
-
+            
 
